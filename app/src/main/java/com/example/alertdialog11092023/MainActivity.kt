@@ -2,9 +2,13 @@ package com.example.alertdialog11092023
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import com.example.alertdialog11092023.design_pattern_builder.PizzaEnum
+import com.example.alertdialog11092023.design_pattern_builder.PizzaStore
+import com.example.alertdialog11092023.design_pattern_builder.WaterEnum
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,7 +25,12 @@ class MainActivity : AppCompatActivity() {
             openAlertDialogSingleChoiceItems()
         }
 
-        isMale(Gender.FEMALE)
+        val orderPizzaStore = PizzaStore.Builder().apply {
+            setPizza(PizzaEnum.MEXICAN)
+            setWater(WaterEnum.CAPPUCCINO)
+        }.build()
+
+        Log.d("BBB", orderPizzaStore.toString())
     }
 
     private fun openAlertDialogSingleChoiceItems() {
@@ -84,15 +93,4 @@ class MainActivity : AppCompatActivity() {
             show()
         }
     }
-
-    fun isMale(gender: Gender): Boolean {
-       return when (gender) {
-           Gender.MALE -> true
-           else -> false
-       }
-    }
-}
-
-enum class Gender {
-    MALE, FEMALE
 }
