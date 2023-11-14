@@ -20,6 +20,8 @@ class MainActivity : AppCompatActivity() {
         btnOpenAlertDialog.setOnClickListener {
             openAlertDialogSingleChoiceItems()
         }
+
+        isMale(Gender.FEMALE)
     }
 
     private fun openAlertDialogSingleChoiceItems() {
@@ -82,4 +84,15 @@ class MainActivity : AppCompatActivity() {
             show()
         }
     }
+
+    fun isMale(gender: Gender): Boolean {
+       return when (gender) {
+           Gender.MALE -> true
+           else -> false
+       }
+    }
+}
+
+enum class Gender {
+    MALE, FEMALE
 }
