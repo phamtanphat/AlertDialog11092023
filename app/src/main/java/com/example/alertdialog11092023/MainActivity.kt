@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnOpenCustomDialog.setOnClickListener {
-
+            DialogUtil.showLoginDialog(this@MainActivity)
         }
     }
 
