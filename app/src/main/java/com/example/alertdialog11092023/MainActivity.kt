@@ -25,12 +25,9 @@ class MainActivity : AppCompatActivity() {
             openAlertDialogSingleChoiceItems()
         }
 
-        val orderPizzaStore = PizzaStore.Builder().apply {
-            setPizza(PizzaEnum.MEXICAN)
-            setWater(WaterEnum.CAPPUCCINO)
-        }.build()
+        btnOpenCustomDialog.setOnClickListener {
 
-        Log.d("BBB", orderPizzaStore.toString())
+        }
     }
 
     private fun openAlertDialogSingleChoiceItems() {
@@ -92,5 +89,15 @@ class MainActivity : AppCompatActivity() {
             }
             show()
         }
+    }
+
+    private fun createBuilderPattern() {
+
+//        val orderPizzaStore = PizzaStore.Builder().apply {
+//            setPizza(PizzaEnum.MEXICAN)
+//            setWater(WaterEnum.CAPPUCCINO)
+//        }.build()
+//
+//        Log.d("BBB", orderPizzaStore.toString())
     }
 }
