@@ -4,7 +4,6 @@ import android.app.Dialog
 import android.content.Context
 import android.view.Gravity
 import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import androidx.constraintlayout.widget.Constraints.LayoutParams
 
@@ -29,6 +28,8 @@ class DialogUtil {
                     if (accountStr == "phat" && passwordStr == "123") {
                         onListenLoginSuccess?.invoke(accountStr, passwordStr)
                     }
+
+                    dismiss()
                 }
 
                 // Display dialog

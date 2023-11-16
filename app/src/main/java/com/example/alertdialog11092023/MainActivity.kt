@@ -26,7 +26,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnOpenCustomDialog.setOnClickListener {
-            DialogUtil.showLoginDialog(this@MainActivity)
+            DialogUtil.showLoginDialog(this@MainActivity) { accout, password ->
+                Toast.makeText(this, "Login success", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
